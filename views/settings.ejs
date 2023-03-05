@@ -1,0 +1,58 @@
+<%- include('sitemaster'); %>
+
+<section id="settings">
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="row col-sm-8">
+        <div class="col-12 mt-5">
+
+            <form class="mx-1 mx-md-4" method="POST" action="/register">
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 mt-sm-4 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label">Your username</label>
+                            <input type="text" name="username" id="username" class="form-control" />
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fa fa-arrow-down fa-lg me-3 mt-sm-4 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label">Minimum number</label>
+                            <input type="number" name="minimum" id="minimum" class="form-control" />
+                          </div>
+                        </div>
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fa fa-arrow-up fa-lg me-3 mt-sm-4 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label">Maximum number</label>
+                            <input type="number" name="maximum" id="maximum" class="form-control" />
+                          </div>
+                        </div>
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fa fa-clock fa-lg me-3 mt-sm-4 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label">Time in seconds</label>
+                            <input type="number" name="seconds" id="seconds" class="form-control" />
+                          </div>
+                        </div>
+
+
+                        <div class="form-check d-flex justify-content-center mb-4">
+                            <input class="form-check-input me-2" name="info" type="checkbox" value=""/>
+                            <label class="form-check-label">
+                                Show session info
+                            </label>  
+                        </div>
+
+
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                  <button type="submit" class="btn btn-primary btn-lg">Play</button>
+                </div>
+
+              </form>
+        </div>
+    </div>
+</section>

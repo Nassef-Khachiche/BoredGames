@@ -1,0 +1,57 @@
+.card {
+    position: absolute;
+    margin-top: 5%;
+    width: 101px;
+    height: 137px;
+    background: url("http://i.stack.imgur.com/WZ9Od.gif%27") no-repeat;
+    background-size: 1300% 500%;
+}
+
+.holder {
+    display: flex;
+    justify-content: center;
+    
+    position: absolute;
+
+    margin-top: 5%;
+    width: 101px;
+    height: 137px;
+
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.show {
+    transform: rotateY(180deg);
+}
+
+/* back and front */
+.card-back { background-position: 0 100%; backface-visibility: hidden; }
+.card-front { transform: rotateY(180deg); backface-visibility: hidden; }
+
+/* each card moves 8,3% to the right */
+
+/* hearts */
+.card-hearts-2 { background-position: 0 0;          }
+.card-hearts-3 { background-position: 8.33% 0;      }
+.card-hearts-4 { background-position: 16.667% 0;    }
+
+/* diamonds */
+.card-diamonds-q { background-position: 83.333% 25%;}
+.card-diamonds-k { background-position: 91.667% 25%;}
+.card-diamonds-a { background-position: 100% 25%;   }
+
+/* clubs */
+.card-clubs-q { background-position: 83.333% 50%;   }
+.card-clubs-k { background-position: 91.667% 50%;   }
+.card-clubs-j { background-position: 75% 50%;       }
+.card-clubs-a { background-position: 100% 50%;      } 
+
+/* spades */
+.card-spades-q { background-position: 83.333% 75%;  }
+.card-spades-k { background-position: 91.667% 75%;  }
+.card-spades-j { background-position: 75% 75%;      }
+.card-spades-a { background-position: 100% 75%;     }
+
+/* extra */
+.card-joker { background-position: 8.33% 100%;      } 
