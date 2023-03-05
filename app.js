@@ -51,7 +51,7 @@ app.get('/settings', function(req, res) {
 });
 
 app.get('/guess', function(req, res) { 
-  res.render('guessthenumber');
+  res.render('guessthenumber', { req : req, res : res});
 });
 
 app.get('/leaderboard', function(req, res) { 
