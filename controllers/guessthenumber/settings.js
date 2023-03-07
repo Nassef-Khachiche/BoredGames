@@ -1,4 +1,3 @@
-
 exports.settings = async (req, res) => 
 {
     let {
@@ -22,6 +21,7 @@ exports.settings = async (req, res) =>
     let min = parseInt(req.session.player.minimum);
     let max = parseInt(req.session.player.maximum);
 
+    // get random number
     let answer = Math.floor(Math.random() * (max - min + 1)) + min;
 
     req.session.answer = answer;

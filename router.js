@@ -16,6 +16,7 @@ router.post('/login', login);
 
 // guess the number
 router.post('/settings', settings);
+// router.get('/settings', settings);
 router.post('/guess', guess);
 
 

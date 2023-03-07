@@ -6,25 +6,41 @@
 
       <div class="col-12 mt-5">
         <h1>Guess the number!</h1>
-        <p> Guess a number between <%- req.session.player.minimum %> and <%- req.session.player.maximum %> </p>
-
+        <p> Guess a number between <b><%- req.session.player.minimum %></b> and <b><%- req.session.player.maximum %></b> </p>
         <form method="post" action="/guess">
 
           <div class="row">
             <div class="d-flex flex-row align-items-center mb-4">
             
               <div class="form-outline flex-fill mb-0">
-                <input type="text" name="guess" id="guess" class="form-control" />
+                <input type="text" name="guess" id="guess" class="form-control" required/>
               </div>
             </div>
   
-            <div class="d-flex justify-content-center mb-3 mb-lg-4">  
-              <button type="submit" class="btn btn-primary btn-lg">Guess</button>
+            <div class="d-flex justify-content-between mb-3 mb-lg-4">  
+              <button type="submit" class="btn col-5 btn-primary btn-lg">Guess</button>
+              <a href="/settings" class="btn col-5 btn-danger btn-lg">Quit or Restart</a>
+            </div>  
+          </div>
+
+          <div class="row">
+            <div class="col-12 d-flex justify-content-between mb-3 mb-lg-4">
+              <div class="state fs-1 text fw-bold text-<%- req.session.color %>"><%- req.session.state %></div>
+              <div class="state fs-1 text fw-bold text-success d-flex" id="countdown"><%- req.session.player.seconds %></div>
             </div>
           </div>
 
-        </form>
+          <div class="row">
+            <div class="d-flex justify-content-between mb-3 mb-lg-4">
+              <div class="text fs-3 fw-bold">Guesses: <%- req.session.guesses %> </div>
+            </div>
+          </div>
 
+          <script src="../public/js/count-down.js"></script>
+          <script src="../public/js/guessed.js"></script>
+
+
+        </form>
       </div>
 
     </div>

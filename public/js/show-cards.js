@@ -6,10 +6,10 @@ function showcard() {
     count += 1;
     this.classList.add('show')
 
-    if (count == 3) 
+    if (count >= 3)
     {
-        holder.forEach((item) => item.classList.remove('show'))
         count = 0;
+        holder.forEach((item) => item.classList.remove('show'))
     }
 }
 
