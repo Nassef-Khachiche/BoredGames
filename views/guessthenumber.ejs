@@ -1,13 +1,17 @@
 <%- include('sitemaster'); %>
 
 <section id="guess">
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="row text-center">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="row text-center">
 
-        <div class="col-lg-12">
-          <h1>Guess the number!</h1>
-          <p> Guess a number between  <%- req.session.firstname %> and <%- req.session.firstname %> </p>
-        </div>
-        
+      <div class="col-lg-12 mt-5">
+        <h1>Guess the number!</h1>
+        <p> Guess a number between <%- req.session.player.minimum %> and <%- req.session.player.maximum %> </p>
+
+
+        <div id="time"></div>
+      </div>
+
     </div>
+    <script src="../public/js/count-down.js"></script>
 </section>
