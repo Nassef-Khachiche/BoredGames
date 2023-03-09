@@ -2,14 +2,21 @@ const holder = document.querySelectorAll('.holder')
 let count = 0;
 
 function showcard() {
-    console.log(count);
+    let cardname = this.children[0].classList[2];
+
+    console.log(count, cardname);
     count += 1;
+
     this.classList.add('show')
 
-    if (count >= 3)
+    if (count >= 2)
     {
-        count = 0;
-        holder.forEach((item) => item.classList.remove('show'))
+        /* wait a second to smooth out when hiding the cards */
+        setTimeout(function(){ 
+            count = 0;
+            holder.forEach((item) => item.classList.remove('show'))
+        }, 1000);
+        
     }
 }
 

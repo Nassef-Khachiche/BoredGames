@@ -1,9 +1,13 @@
+body {
+    background-repeat: no-repeat;
+    background-image: url('../vectors/memory-background.jpg');
+}
 .card {
     position: absolute;
     margin-top: 5%;
     width: 101px;
     height: 137px;
-    background: url("http://i.stack.imgur.com/WZ9Od.gif%27") no-repeat;
+    background: url("../vectors/WZ9Od.gif\'") no-repeat;
     background-size: 1300% 500%;
 }
 
