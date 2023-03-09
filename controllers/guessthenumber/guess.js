@@ -6,11 +6,15 @@ exports.guess = async (req, res) =>
     let answer = parseInt(req.session.answer);
 
     console.log(guess, answer);
-    guesses.push(guess);
 
+    /* tries */
+    req.session.player.tries = parseInt(req.session.player.tries - 1);
+
+    /* guesses */
+    guesses.push(guess);
     req.session.guesses = guesses.toString();
 
-    // Higher or lower
+    /* Higher or lower */
     if (guess > answer) 
     {
         req.session.color = "danger"
@@ -23,8 +27,8 @@ exports.guess = async (req, res) =>
         req.session.state = "Higher"
         console.log('higher')
     }
-
-    // On wrong guess
+    
+    /* On wrong guess */
     if (guess == answer) {
         req.session.state = "You won!"
         res.redirect('/guess');

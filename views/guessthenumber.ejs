@@ -1,7 +1,16 @@
 <%- include('sitemaster'); %>
 
 <section id="guess">
-  <div class="container d-flex justify-content-center align-items-start">
+  <div class="container d-flex justify-content-start align-items-center">
+
+    <div class="side">
+      <div class="row">
+        <div class="state fs-1 text fw-bold mt-sm-5 text-<%- req.session.color %>"><%- req.session.state %></div>
+        <div class="state fs-1 text fw-bold mt-sm-5"> Tries: <%- req.session.player.tries %></div>
+        <div class="state fs-1 text fw-bold mt-sm-5 text-success d-flex" id="countdown"><%- req.session.player.seconds %></div>
+      </div>
+    </div>
+
     <div class="row text-center">
 
       <div class="col-12 mt-5">
@@ -24,15 +33,8 @@
           </div>
 
           <div class="row">
-            <div class="col-12 d-flex justify-content-between mb-3 mb-lg-4">
-              <div class="state fs-1 text fw-bold text-<%- req.session.color %>"><%- req.session.state %></div>
-              <div class="state fs-1 text fw-bold text-success d-flex" id="countdown"><%- req.session.player.seconds %></div>
-            </div>
-          </div>
-
-          <div class="row">
             <div class="d-flex justify-content-between mb-3 mb-lg-4">
-              <div class="text fs-3 fw-bold">Guesses: <%- req.session.guesses %> </div>
+              <div class="text fs-3 fw-bold overflow-auto" style="width: 500px;">Guesses: <%- req.session.guesses %> </div>
             </div>
           </div>
 
