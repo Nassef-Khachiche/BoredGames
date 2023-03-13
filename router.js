@@ -8,7 +8,7 @@ const { login } = require('./controllers/user/login');
 
 const { settings } = require('./controllers/guessthenumber/settings');
 const { guess } = require('./controllers/guessthenumber/guess');
-const { leaderboard } = require('./controllers/leaderboard/leaderboard_data');
+const { leaderboard } = require('./controllers/leaderboard/leaderboard');
 
 
 /* user */
