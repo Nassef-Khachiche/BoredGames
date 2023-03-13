@@ -30,6 +30,11 @@ body {
     transform: rotateY(180deg);
 }
 
+.paired {
+    pointer-events: none;
+    transform: rotateY(180deg);
+}
+
 /* back and front */
 .card-back { background-position: 0 100%; backface-visibility: hidden; }
 .card-front { transform: rotateY(180deg); backface-visibility: hidden; }
