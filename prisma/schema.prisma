@@ -20,11 +20,11 @@ model leaderboard {
   place         Int
   player        String   @db.VarChar(100)
   range         String   @db.VarChar(100)
-  max_seconds   Int
-  max_tries     Int
-  num_guesses   Int
-  time          Int
-  secret_number Int
+  max_seconds   String   @db.VarChar(100)
+  max_tries     String   @db.VarChar(100)
+  num_guesses   String   @db.VarChar(100)
+  time          String   @db.VarChar(100)
+  secret_number String   @db.VarChar(100)
   cheated       Int
   play_date     DateTime @default(now()) @db.Date
 }

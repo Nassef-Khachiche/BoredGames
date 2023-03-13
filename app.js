@@ -54,12 +54,8 @@ app.get('/guess', function(req, res) {
   res.render('guessthenumber', { req : req, res : res});
 });
 
-app.get('/leaderboard', function(req, res) { 
-  res.render('leaderboard');
-});
-
-app.get('/leaderboard', function(req, res) { 
-  res.render('leaderboard');
+app.get('/leaderboards', function(req, res) { 
+  res.render('leaderboards');
 });
 
 app.get('/memory', function(req, res) { 
