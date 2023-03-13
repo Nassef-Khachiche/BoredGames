@@ -7,7 +7,6 @@ exports.guess = async (req, res) =>
     let answer = parseInt(req.session.answer);
 
     console.log(guess, answer);
-
     req.session.disabled = ""
 
     /* tries */
@@ -34,6 +33,8 @@ exports.guess = async (req, res) =>
     /* On wrong guess */
     if (guess == answer) {
 
+        req.session.disabled = "disabled"
+
         try 
         {
             const leaderboard = await prisma.leaderboard.create({
@@ -49,7 +50,6 @@ exports.guess = async (req, res) =>
                     cheated: 0,
                 },
             });
-
         }
         catch (e) 
         {

@@ -1,22 +1,15 @@
-function startTimer(duration, display) {
-  var timer = duration, minutes, seconds;
-  setInterval(function () {
-      minutes = parseInt(timer / 60, 10);
-      seconds = parseInt(timer % 60, 10);
+var deadline = new Date().getTime() / 1000 + 100;
 
-     // minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
+var x = setInterval(function() {
+  var now = new Date().getTime() / 1000;
+  var t = deadline - now;
+  var seconds = Math.floor((t % (1000 * 60)) / 1000);
 
-      display.textContent =  seconds;
+  document.querySelector(".countdown").innerHTML = Math.round(t) + "s ";
 
-      if (--timer < 0) {
-          timer = duration;
-      }
-  }, 1000);
-}
+  if (t < 0) {
+      clearInterval(x);
+      document.querySelector(".countdown").innerHTML = "Game over!";
+  }
 
-window.onload = function () {
-  var fiveMinutes = 60 * 5,
-      display = document.querySelector('.countdown');
-  startTimer(fiveMinutes, display);
-};
+}, 1000);

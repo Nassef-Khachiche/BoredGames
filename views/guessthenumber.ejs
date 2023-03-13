@@ -5,9 +5,9 @@
 
     <div class="side-info">
       <div class="row">
-        <div class="state fs-1 text fw-bold mt-sm-5 text-<%- req.session.color %>"><%- req.session.state %></div>
-        <div class="state fs-1 text fw-bold mt-sm-5"> Tries: <%- req.session.player.tries %></div>
-        <div class="state fs-1 text fw-bold mt-sm-5 text-success d-flex countdown"><%- req.session.player.seconds %></div>
+        <div class="state fs-1 text fw-bold p-sm-3 mt-sm-5 text-<%- req.session.color %>"><%- req.session.state %></div>
+        <div class="state fs-1 text fw-bold p-sm-3 mt-sm-5"> Tries: <%- req.session.player.tries %></div>
+        <div class="state fs-1 text fw-bold p-sm-3 mt-sm-5 text-success d-flex countdown"></div>
       </div>
     </div>
 
@@ -22,14 +22,14 @@
             <div class="d-flex flex-row align-items-center mb-4">
             
               <div class="form-outline flex-fill mb-0">
-                <input type="number" name="guess" id="guess" class="form-control" required/>
+                <input type="number" name="guess" id="guess" class="form-control" required <%- req.session.disabled %>/>
               </div>
             </div>
   
             <div class="d-flex justify-content-between mb-3 mb-lg-4">  
-              <button type="submit" class="btn col-5 btn-primary btn-lg">Guess</button>
+              <button type="submit" class="btn col-5 btn-primary btn-lg" <%- req.session.disabled %>>Guess</button>
               <a href="/settings" class="btn col-5 btn-danger btn-lg">Quit or Restart</a>
-            </div>  
+            </div>
           </div>
 
           <div class="row">
@@ -38,9 +38,13 @@
             </div>
           </div>
 
-          <script src="../public/js/count-down.js"></script>
+          <!-- <script src="../public/js/count-down.js"></script> -->
           <script src="../public/js/guessed.js"></script>
-
+          
+          
+          <script>
+            
+          </script>
         </form>
       </div>
 
