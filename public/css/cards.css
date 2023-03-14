@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     background-repeat: no-repeat;
     background-image: url('../vectors/memory-background.jpg');
@@ -25,15 +29,30 @@ body {
     transition: all 0.5s ease;
 }
 
+.paired {
+    pointer-events: none;
+    transform: rotateY(180deg);
+}
+
+.wait-turn {
+    pointer-events: none;
+}
+
 .show {
     pointer-events: none;
     transform: rotateY(180deg);
 }
 
-.paired {
-    pointer-events: none;
-    transform: rotateY(180deg);
+.fall 
+{
+    animation: drop 3s ease forwards;
 }
+
+@keyframes drop{
+    70%{transform: translateY(700px)}
+    100%{transform: translateY(650px)}
+}
+
 
 /* back and front */
 .card-back { background-position: 0 100%; backface-visibility: hidden; }
@@ -43,8 +62,9 @@ body {
 
 /* hearts */
 .card-hearts-2 { background-position: 0 0;          }
-.card-hearts-3 { background-position: 8.33% 0;      }
 .card-hearts-4 { background-position: 16.667% 0;    }
+.card-hearts-3 { background-position: 8.33% 0;      }
+.card-hearts-10{ background-position: 66.667% 0;    }
 
 /* diamonds */
 .card-diamonds-q { background-position: 83.333% 25%;}
@@ -52,6 +72,7 @@ body {
 .card-diamonds-a { background-position: 100% 25%;   }
 
 /* clubs */
+.card-clubs-10{ background-position: 66.667% 50%;   }
 .card-clubs-q { background-position: 83.333% 50%;   }
 .card-clubs-k { background-position: 91.667% 50%;   }
 .card-clubs-j { background-position: 75% 50%;       }
