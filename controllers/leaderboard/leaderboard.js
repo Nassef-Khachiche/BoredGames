@@ -1,8 +1,8 @@
 exports.leaderboard = async (req, res) => 
 {
     
-    const players = await prisma.leaderboard.findMany({
-        // Returns all user fields
+    const guessthenumber = await prisma.leaderboard_guessthenumber.findMany({
+        /* Returns all user fields */
         select: {
             id: true,
             place: true,
@@ -17,7 +17,8 @@ exports.leaderboard = async (req, res) =>
         }
     });
 
+
     res.status(200).json({
-        players: players
+        players: guessthenumber,
     });
 }

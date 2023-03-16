@@ -1,19 +1,19 @@
-<%- include('sitemaster'); %>
+<%- include('../partials/sitemaster'); %>
 
 <section id="guess">
-  <div class="container d-flex justify-content-start align-items-center">
+  <div class="container d-flex justify-content-start align-items-center p-0">
 
     <div class="side-info">
-      <div class="row">
-        <div class="state fs-1 text fw-bold p-sm-3 mt-sm-5 text-<%- req.session.color %>"><%- req.session.state %></div>
-        <div class="state fs-1 text fw-bold p-sm-3 mt-sm-5"> Tries: <%- req.session.player.tries %></div>
-        <div class="state fs-1 text fw-bold p-sm-3 mt-sm-5 text-success d-flex countdown"></div>
+      <div class="row me-5">
+        <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5 text-<%- req.session.color %>"><%- req.session.state %></div>
+        <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5"> Tries: <%- req.session.player.tries %></div>
+        <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5 text-success d-flex countdown"></div>
       </div>
     </div>
 
     <div class="row text-center">
 
-      <div class="col-12 mt-5">
+      <div class="col-12 mt-5 mx-5">
         <h1>Guess the number!</h1>
         <p> Guess a number between <b><%- req.session.player.minimum %></b> and <b><%- req.session.player.maximum %></b> </p>
         <form method="post" action="/guess">
@@ -39,7 +39,7 @@
           </div>
 
           <!-- <script src="../public/js/count-down.js"></script> -->
-          <script src="../public/js/guessed.js"></script>
+          <script src="../../public/js/guessed.js"></script>
           
           
           <script>

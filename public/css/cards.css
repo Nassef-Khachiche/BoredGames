@@ -49,9 +49,33 @@ body {
     animation: drop 3s ease forwards;
 }
 
-@keyframes drop{
+@keyframes drop {
     70%{transform: translateY(700px)}
     100%{transform: translateY(650px)}
+}
+
+@media only screen and (max-width: 800px){
+    .fall 
+    {
+        opacity: 0;
+    }
+
+    .container {
+        position: relative;
+    }   
+
+    .card.card-front {  
+        position: relative;
+    }
+
+    .holder {
+        position: relative;
+    }
+
+    .extra-cards {
+        display: none;
+    }
+
 }
 
 

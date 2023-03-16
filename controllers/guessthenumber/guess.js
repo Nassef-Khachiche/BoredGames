@@ -37,7 +37,7 @@ exports.guess = async (req, res) =>
 
         try 
         {
-            const leaderboard = await prisma.leaderboard.create({
+            const leaderboard = await prisma.leaderboard_guessthenumber.create({
                 data: {
                     place: 1,
                     player: req.session.player.username,

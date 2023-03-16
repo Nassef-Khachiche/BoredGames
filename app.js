@@ -31,15 +31,15 @@ app.set('views', 'views');
 app.use('/', require('./router'));
 
 app.get('/', function(req, res) { 
-  res.render('login');
+  res.render('authorization/login');
 });
 
 app.get('/login', function(req, res) { 
-  res.render('login');
+  res.render('authorization/login');
 });
 
 app.get('/register', function(req, res) { 
-  res.render('register');
+  res.render('authorization/register');
 });
 
 app.get('/dashboard', function(req, res) { 
@@ -47,11 +47,11 @@ app.get('/dashboard', function(req, res) {
 });
 
 app.get('/settings', function(req, res) { 
-  res.render('settings');
+  res.render('guessthenumber/settings');
 });
 
 app.get('/guess', function(req, res) { 
-  res.render('guessthenumber', { req : req, res : res});
+  res.render('guessthenumber/guessthenumber', { req : req, res : res});
 });
 
 app.get('/leaderboards', function(req, res) { 
@@ -59,7 +59,7 @@ app.get('/leaderboards', function(req, res) {
 });
 
 app.get('/memory', function(req, res) { 
-  res.render('memory');
+  res.render('memory/memory');
 });
   
 server.listen(port, () => {

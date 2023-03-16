@@ -15,7 +15,7 @@ model users {
   password  String @db.VarChar(100)
 }
 
-model leaderboard {
+model leaderboard_guessthenumber {
   id            Int      @id @default(autoincrement())
   place         Int
   player        String   @db.VarChar(100)
@@ -27,4 +27,11 @@ model leaderboard {
   secret_number String   @db.VarChar(100)
   cheated       Int
   play_date     DateTime @default(now()) @db.Date
+}
+
+model leaderboard_memory {
+  id     Int    @id @default(autoincrement())
+  name   String @db.VarChar(100)
+  time   String @db.VarChar(100)
+  clicks Int
 }

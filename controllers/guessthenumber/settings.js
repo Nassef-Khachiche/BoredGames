@@ -1,3 +1,11 @@
+exports.reset = async () => 
+{
+    req.session.destroy();
+    req.status().json({
+        message: "Resetted guess the number"
+    });
+}
+
 exports.settings = async (req, res) => 
 {
     let {
