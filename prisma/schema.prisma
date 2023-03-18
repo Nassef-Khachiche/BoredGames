@@ -34,4 +34,5 @@ model leaderboard_memory {
   name   String @db.VarChar(100)
   time   String @db.VarChar(100)
   clicks Int
+  score  Int
 }

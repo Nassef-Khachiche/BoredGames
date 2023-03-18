@@ -54,12 +54,20 @@ app.get('/guess', function(req, res) {
   res.render('guessthenumber/guessthenumber', { req : req, res : res});
 });
 
-app.get('/leaderboards', function(req, res) { 
-  res.render('leaderboards');
+app.get('/guess/leaderboard', function(req, res) { 
+  res.render('guessthenumber/leaderboard');
 });
 
 app.get('/memory', function(req, res) { 
   res.render('memory/memory');
+});
+
+app.get('/memory/leaderboard', function(req, res) { 
+  res.render('memory/leaderboard');
+});
+
+app.get('/leaderboards', function(req, res) { 
+  res.render('leaderboards');
 });
   
 server.listen(port, () => {

@@ -1,15 +1,5 @@
-::-webkit-scrollbar {
-    display: none;
-}
-
-body {
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-image: url('../vectors/memory-background.jpg');
-}
 .card {
     position: absolute;
-    margin-top: 5%;
     width: 101px;
     height: 137px;
     background: url("../vectors/WZ9Od.gif\'") no-repeat;
@@ -22,7 +12,6 @@ body {
     
     position: absolute;
 
-    margin-top: 5%;
     width: 101px;
     height: 137px;
 
@@ -39,50 +28,15 @@ body {
     pointer-events: none;
 }
 
-.show {
-    pointer-events: none;
-    transform: rotateY(180deg);
-}
-
 .fall 
 {
     animation: drop 3s ease forwards;
 }
 
-#exampleModal {
-    transform: rotateY(0deg);
-    transform-style: preserve-3d;
+.show {
+    pointer-events: none;
+    transform: rotateY(180deg);
 }
-
-@keyframes drop {
-    70%{transform: translateY(700px)}
-    100%{transform: translateY(650px)}
-}
-
-@media only screen and (max-width: 800px){
-    .fall 
-    {
-        opacity: 0;
-    }
-
-    .container {
-        position: relative;
-    }   
-
-    .card.card-front {  
-        position: relative;
-    }
-
-    .holder {
-        position: relative;
-    }
-
-    .extra-cards {
-        display: none;
-    }
-
-}
-
 
 /* back and front */
 .card-back { background-position: 0 100%; backface-visibility: hidden; }

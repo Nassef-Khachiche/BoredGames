@@ -1,0 +1,80 @@
+@import url('https://fonts.cdnfonts.com/css/silkscreen');
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../../public/vectors/dungeon-background.jpg');
+    font-family: 'Silkscreen', sans-serif;
+    font-family: 'Silkscreen Expanded', sans-serif;
+    color: white;
+}
+
+img {
+    width: 150px;
+}
+
+.blue-side, .red-side {
+    margin-left: 10%;
+}
+
+#exampleModal {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
+.game-info {
+    height: 60px;
+}
+
+/* Try different way, Too clunky */
+.container {
+    margin-left: 3.5rem!important
+}
+
+.extra-data {
+    display: flex;
+}
+
+.timer-display {
+    width: 360px;
+}
+
+@keyframes drop {
+    70%{transform: translateY(700px)}
+    100%{transform: translateY(650px)}
+}
+
+@media only screen and (max-width: 800px){
+
+    .blue-side, .red-side, .extra-cards, .clicks, .time, .extra-data {
+        display: none;
+    }
+
+    .timer-display {
+        position: absolute;
+    }   
+
+    .fall 
+    {
+        opacity: 0;
+    }
+
+    .container {
+        padding: 0;
+        position: relative;
+    }   
+
+    .card.card-front {  
+        position: relative;
+    }
+
+    .holder {
+        position: relative;
+    }
+
+}
