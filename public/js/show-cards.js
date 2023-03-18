@@ -1,9 +1,13 @@
 const holder = document.querySelectorAll('.holder')
+const paired_cards = document.querySelectorAll('.show')
+
 let count = 0;
 let score = 0;
 
 let pair = [];
 let paired = [];
+
+let fallen = 0;
 
 function showcard() {
     let cardname = this.children[0].classList[2];
@@ -19,6 +23,8 @@ function showcard() {
 
     if (count >= 2)
     {
+        console.log(score);
+
         /* wait until you turned a card */
         holder.forEach((item) => item.classList.add('wait-turn'))
 
@@ -48,7 +54,6 @@ function showcard() {
                 holder.forEach((item) => item.classList.remove('wait-turn'))
             }, 1000);
         }
-        
     }
 }
 
