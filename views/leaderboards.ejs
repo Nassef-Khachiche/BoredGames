@@ -1,23 +1,49 @@
 <div class="d-none">
   <%- include('partials/sitemaster'); %>
-  <%- include('partials/memory'); %>
+  <link rel="stylesheet" href="../public/css/leaderboards.css">
+
 </div>
-<link rel="stylesheet" href="../public/css/leaderboards.css">
 
 <section id="settings">
-  <div class="container d-flex justify-content-center align-items-center">
-    <div class="row col-sm-8">
-      <div class="col-12 mt-5">
 
-        <div class="mx-sm-5 p-sm-4">
-          <div class="holder show">
-              <div class="card card-front me-5 card-diamonds-a card-1"></div>
-              <div class="card card-front me-3 ms-2 card-diamonds-q card-2"></div>
-              <div class="card card-front ms-5 card-diamonds-k card-3"></div>
-              <div class="card card-back"></div>
+  <div class="container d-flex justify-content-center align-items-center mt-sm-5">
+    <div class="row col-sm-12 mt-5">
+      <div class="col-12 mt-5">
+        <div class="d-block d-md-flex justify-content-around mt-sm-5 align-items-center">
+
+
+
+
+          <div class="memory text-center ms-5">
+
+            <div class="card mt-5 top te">
+              <img class="card-img-top image-fluid preview d-none d-lg-flex" src="https://img.freepik.com/premium-vector/pixel-art-playing-card-spades-hearts-gold-sticks-bit-game_360488-52.jpg">
+              <div class="card-body text-white">
+                <h4 class="card-title">Memory</h4>
+                <a href="/memory/leaderboard" class="btn btn-primary">Go</a>
+              </div>
+            </div>
+          
           </div>
-      </div>
-        
+
+
+          <div class="guess ms-5 text-center">
+            
+
+            <div class="card mt-5 top">
+              <img class="card-img-top image-fluid preview d-none d-lg-flex" src="../public/vectors/guessthenumber_preview.png" >
+              <div class="card-body text-white">
+                <h4 class="card-title">Guess the number</h4>
+                <a href="/guess/leaderboard" class="btn btn-primary">Go</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+          
+
       </div>
     </div>
 </section>

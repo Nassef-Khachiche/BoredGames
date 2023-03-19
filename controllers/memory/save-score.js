@@ -23,7 +23,7 @@ exports.savescore = async (req, res) =>
         });
 
         // res.status(200).json({ message: 'A new record has been established!'});
-        res.redirect("/memory");
+        res.redirect("/memory/leaderboard");
     } 
     catch (e) 
     {

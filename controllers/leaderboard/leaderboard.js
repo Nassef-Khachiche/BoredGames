@@ -17,8 +17,21 @@ exports.leaderboard = async (req, res) =>
         }
     });
 
+    const memory = await prisma.leaderboard_memory.findMany({
+        /* Returns all user fields */
+        select: {
+            id: true,
+            name: true,
+            time: true,
+            clicks: true,
+            score: true,
+        },
+    });
+
+
 
     res.status(200).json({
-        players: guessthenumber,
+        players_guess: guessthenumber,
+        players_memory: memory,
     });
 }

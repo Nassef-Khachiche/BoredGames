@@ -1,15 +1,14 @@
 body {
-    background: white;
+    background-repeat: repeat;
+    background-image: url('https://art.pixilart.com/202a22c1c9e6.png');
 }
 
-/* .card-1 {
-    transform: rotateX(30deg);
+.preview {
+    width: 600px;
+    height: 170px;
 }
 
-.card-2 {
-    transform: rotateX(45deg);
+.top {
+    background-image: url('https://kagrier.files.wordpress.com/2016/04/battle-ground-rough.png'); 
+    background-size: cover;
 }
-
-.card-3 {
-    transform: rotateX(60deg);
-} */

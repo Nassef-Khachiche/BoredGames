@@ -3,7 +3,7 @@
 <section id="guess">
   <div class="container d-flex justify-content-start align-items-center p-0">
 
-    <div class="side-info">
+    <div class="side-info" style="width: 380px;">
       <div class="row me-5">
         <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5 text-<%- req.session.color %>"><%- req.session.state %></div>
         <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5"> Tries: <%- req.session.player.tries %></div>
@@ -33,18 +33,10 @@
           </div>
 
           <div class="row">
-            <div class="d-flex justify-content-between mb-3 mb-lg-4">
+            <div class="d-flex justify-content-center mb-3 mb-lg-4">
               <div class="text fs-3 fw-bold overflow-auto" style="width: 500px;">Guesses: <%- req.session.guesses %> </div>
             </div>
           </div>
-
-          <!-- <script src="../public/js/count-down.js"></script> -->
-          <script src="../../public/js/guessed.js"></script>
-          
-          
-          <script>
-            
-          </script>
         </form>
       </div>
 

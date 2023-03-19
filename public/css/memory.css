@@ -14,6 +14,18 @@ body {
     color: white;
 }
 
+body {
+    background-repeat: repeat;
+    background-image: url('https://art.pixilart.com/202a22c1c9e6.png');
+}
+
+
+/* body {
+    background-repeat: repeat;
+    background-image: url('');
+}
+*/
+
 img {
     width: 150px;
 }
@@ -31,11 +43,6 @@ img {
     height: 60px;
 }
 
-/* Try different way, Too clunky */
-.container {
-    margin-left: 3.5rem!important
-}
-
 .extra-data {
     display: flex;
 }
@@ -49,13 +56,14 @@ img {
     100%{transform: translateY(650px)}
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 1000px){
 
-    .blue-side, .red-side, .extra-cards, .clicks, .time, .extra-data {
+    .blue-side, .red-side, .clicks, .time, .extra-data {
         display: none;
     }
-
+    
     .timer-display {
+        width: 250px;
         position: absolute;
     }   
 
@@ -65,16 +73,40 @@ img {
     }
 
     .container {
+        width: 100%;
         padding: 0;
+        margin: 0!important;
         position: relative;
     }   
 
-    .card.card-front {  
+    .card.card-front, .holder {  
         position: relative;
     }
 
-    .holder {
-        position: relative;
+    body {
+        background-repeat: repeat;
+        background-image: url('https://art.pixilart.com/202a22c1c9e6.png');
     }
 
+
+    .card, .holder {
+        width: 81px;
+        height: 117px;
+    }
+
+    /* For playability enable this piece of code but looks   :( */
+    /* And disable the extra cards no display */
+
+    /* .extra-cards {
+        display: none;
+    } */
+
+    .extra-cards {
+        display: flex;
+    }
+
+    .card, .holder {
+        width: 57px;
+        height: 87px;
+    }
 }

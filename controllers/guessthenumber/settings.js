@@ -1,11 +1,3 @@
-exports.reset = async () => 
-{
-    req.session.destroy();
-    req.status().json({
-        message: "Resetted guess the number"
-    });
-}
-
 exports.settings = async (req, res) => 
 {
     let {
@@ -33,6 +25,11 @@ exports.settings = async (req, res) =>
     let answer = Math.floor(Math.random() * (max - min + 1)) + min;
 
     req.session.answer = answer;
+
+    req.session.disabled = "";
+    req.session.state = "";
+    guesses = [];
+
 
     res.redirect('/guess');
 }

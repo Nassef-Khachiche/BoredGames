@@ -3,14 +3,13 @@
     <%- include('../partials/memory'); %>
 </div>
 
-
 <section id="memory">   
 
      <div class="game-info d-flex justify-content-around ms-sm-0 ms-5 me-3">
         <div class="fs-1 text-center extra-data">
             Clicks: <p class="text-success ms-2 clicks">0</p>
         </div>
-        <div class="timer-display fs-1 text-center">
+        <div class="timer-display fs-1 text-center me-sm-3">
                 00 : 00 : 00
         </div>
         <div class="fs-1 text-center extra-data">
@@ -185,10 +184,10 @@
     <div class="modal-content">
         <form action="/memory" method="post">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">You paired all the cards !</h5>
+                <h5 class="modal-title text-black" id="exampleModalLabel">You paired all the cards !</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-black">
                 <labek class="form-label">Username</label>
                 <input type="text" class="form-control mb-3 mt-3" name="username" placeholder="Username...">
                 <labek class="form-label">Time</label>
