@@ -6,25 +6,18 @@
 
 body {
     overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('../../public/vectors/dungeon-background.jpg');
+
+    /* font */
     font-family: 'Silkscreen', sans-serif;
     font-family: 'Silkscreen Expanded', sans-serif;
     color: white;
-}
 
-body {
+    /* background */
     background-repeat: repeat;
     background-image: url('https://art.pixilart.com/202a22c1c9e6.png');
-}
 
 
-/* body {
-    background-repeat: repeat;
-    background-image: url('');
 }
-*/
 
 img {
     width: 150px;

@@ -17,9 +17,12 @@
             </div>
     
             <div class="row">
+                
                 <div class="col-12">
-                    <div class="board bg-black text-white p-3 rounded border border-white border-4 mt-5">
-                        <table class="table table-sm text-white" id="example">
+                    <div class="board bg-black text-white p-3 rounded border border-white border-4 mt-5 text-center">
+
+
+                        <table class="table table-sm text-white d-none" id="example">
                             <thead>
                               <tr>
                                 <th class="px-4">#</th>
@@ -30,33 +33,31 @@
                               </tr>
                             </thead>
                             <tbody>
+                                <!-- Data will be loaded here -->
                             </tbody>
-                          </table>
+                        </table>
+
+                        <div class="table-toggle fs-1 p-5" onclick="this.classList.add('d-none'); document.getElementById('example').classList.remove('d-none');;">
+                            <u>Show</u>
+                        </div>
+
                     </div>
                 </div>
+
+
+
             </div>
         </div>
     
     </div>
-    <!-- datatables -->
-  <script src="../../public/js/get-players.js"></script>
-  <script>
-    GetLeaderboardMemory()
-  </script>
 
+  <!-- datatables -->
+
+  <!-- load players into table -->
+  <script src="../../public/js/get-players.js"></script>
+  <script>GetLeaderboardMemory()</script>
+
+   <!-- create datatable -->
   <%- include('../partials/datatables'); %>
 
-  <script>
-    for (const td of document.querySelectorAll("tr")) {
-        if (td.children[0].innerHTML == "1") {
-            td.classList.add('text-warning')
-        }
-    }
-  </script>
-
-    <style>
-        div.dataTables_wrapper div.dataTables_filter input {
-        width: 75%;
-        }
-    </style>
 </section>
