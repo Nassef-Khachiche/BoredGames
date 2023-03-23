@@ -1,15 +1,16 @@
-var deadline = new Date().getTime() / 1000 + 100;
+var timeleft = sessionStorage.getItem('seconds');
 
-var x = setInterval(function() {
-  var now = new Date().getTime() / 1000;
-  var t = deadline - now;
-  var seconds = Math.floor((t % (1000 * 60)) / 1000);
-
-  document.querySelector(".countdown").innerHTML = Math.round(t) + "s ";
-
-  if (t < 0) {
-      clearInterval(x);
-      document.querySelector(".countdown").innerHTML = "Game over!";
+var timer = setInterval(function(){
+  if(timeleft <= 0 || document.getElementById('state').innerHTML == "You won!"){
+    clearInterval(timer);
+    document.getElementById("countdown").innerHTML = "Finished";
+  } else {
+    document.getElementById("countdown").innerHTML = timeleft;
   }
-
+  timeleft -= 1;
+  sessionStorage.setItem('seconds', timeleft);
 }, 1000);
+
+/* Set value's */
+document.getElementById("countdown").innerHTML = sessionStorage.getItem('seconds');
+document.getElementById('seconds').value = sessionStorage.getItem('seconds');

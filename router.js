@@ -6,7 +6,7 @@ router = express.Router();
 const { register } = require('./controllers/user/register');
 const { login } = require('./controllers/user/login');
 const { settings } = require('./controllers/guessthenumber/settings');
-const { guess } = require('./controllers/guessthenumber/guess');
+const { guess, restart } = require('./controllers/guessthenumber/guess');
 const { leaderboard } = require('./controllers/leaderboard/leaderboard');
 const { savescore } = require('./controllers/memory/save-score');
 
@@ -17,7 +17,10 @@ router.post('/login', login);
 
 /* guess the number */
 router.post('/settings', settings);
+
 router.post('/guess', guess);
+router.post('/restart', restart);
+
 
 /* leaderboard */
 router.get('/leaderboard', leaderboard);

@@ -5,9 +5,11 @@
 
     <div class="side-info" style="width: 380px;">
       <div class="row me-5">
-        <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5 text-<%- req.session.color %>"><%- req.session.state %></div>
+        <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5 text-<%- req.session.color %>" id="state"><%- req.session.state %></div>
         <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5"> Tries: <%- req.session.player.tries %></div>
-        <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5 text-success d-flex countdown"></div>
+        <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5 text-success d-flex" id="countdown"></div>
+        <div class="state fs-1 text fw-bold p-sm-0 mt-sm-5 text-warning <%- req.session.cheating %>"> <%- req.session.answer %> </div>
+
       </div>
     </div>
 
@@ -16,29 +18,48 @@
       <div class="col-12 mt-5 mx-5">
         <h1>Guess the number!</h1>
         <p> Guess a number between <b><%- req.session.player.minimum %></b> and <b><%- req.session.player.maximum %></b> </p>
+
         <form method="post" action="/guess">
 
           <div class="row">
-            <div class="d-flex flex-row align-items-center mb-4">
+
+            <div class="d-flex flex-row justify-content-center align-items-center mb-4">
             
               <div class="form-outline flex-fill mb-0">
                 <input type="number" name="guess" id="guess" class="form-control" required <%- req.session.disabled %>/>
               </div>
+
             </div>
-  
-            <div class="d-flex justify-content-between mb-3 mb-lg-4">  
-              <button type="submit" class="btn col-5 btn-primary btn-lg" <%- req.session.disabled %>>Guess</button>
-              <a href="/settings" class="btn col-5 btn-danger btn-lg">Quit or Restart</a>
+            
+            <input type="text" name="seconds" id="seconds" value="" class="d-none">
+
+
+            <div class="d-flex justify-content-center mb-3 mb-lg-4">  
+              <button type="submit" id="button-guess" class="btn col-5 btn-primary btn-lg w-100" <%- req.session.disabled %>>Guess</button>
             </div>
+            
           </div>
 
-          <div class="row">
-            <div class="d-flex justify-content-center mb-3 mb-lg-4">
-              <div class="text fs-3 fw-bold overflow-auto" style="width: 500px;">Guesses: <%- req.session.guesses %> </div>
-            </div>
-          </div>
         </form>
+
+        <form action="/restart" method="post">
+          <button type="submit" name="restart" class="btn col-5 btn-danger btn-lg mb-4 w-100">Quit or Restart</button>
+        </form>
+
+        <div class="row">
+          <div class="d-flex justify-content-center mb-3 mb-lg-4">
+            <div class="text fs-3 fw-bold overflow-auto" style="width: 500px;">Guesses: <%- req.session.guesses %> </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
 </section>
+
+<script src="../../public/js/count-down.js"></script>
+
+<script>
+  document.getElementById("countdown").innerHTML = sessionStorage.getItem('seconds');
+  document.getElementById('seconds').value = sessionStorage.getItem('seconds');
+</script>

@@ -5,7 +5,8 @@ exports.settings = async (req, res) =>
         minimum,
         maximum,
         tries,
-        seconds
+        seconds,
+        cheat,
     } = req.body;
 
     console.log(req.body);
@@ -17,7 +18,7 @@ exports.settings = async (req, res) =>
         tries: tries,
         seconds: seconds
     }
-
+    req.session.player.seconds
     let min = parseInt(req.session.player.minimum);
     let max = parseInt(req.session.player.maximum);
 
@@ -25,6 +26,14 @@ exports.settings = async (req, res) =>
     let answer = Math.floor(Math.random() * (max - min + 1)) + min;
 
     req.session.answer = answer;
+
+    console.log(cheat);
+    if (cheat == '') {
+        req.session.cheating = 'd-flex'
+    }
+    else {
+        req.session.cheating = 'd-none'
+    }
 
     req.session.disabled = "";
     req.session.state = "";
