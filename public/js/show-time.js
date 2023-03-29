@@ -46,7 +46,4 @@ function displayTimer() {
             $('#exampleModal').modal('show');
         }
     }
-    // else {
-    //     document.querySelector('.timerDisplay').innerHTML = "GAME OVER !";
-    // }
 }

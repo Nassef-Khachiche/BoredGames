@@ -1,8 +1,3 @@
-body {
-    background-repeat: repeat;
-    background-image: url('https://art.pixilart.com/202a22c1c9e6.png');
-}
-
 .preview {
     width: 600px;
     height: 170px;
@@ -11,6 +6,7 @@ body {
 .top {
     background-image: url('https://kagrier.files.wordpress.com/2016/04/battle-ground-rough.png'); 
     background-size: cover;
+    background-size: 60%;
 }
 
 div.dataTables_wrapper div.dataTables_filter input {

@@ -7,9 +7,14 @@ function GetLeaderboardGuess() {
 
   GetLeaderboard().then( resp=> {
       var users = resp.players_guess;
+      let place = 0;
+
+      organizeTokens(users);
+
       users.forEach(function(item) 
       {
-        $('tbody').append('<tr><td>'+item.id+'</td><td>'+item.place+ '</td><td>'+item.player+'</td><td>'+ item.range+'</td><td>'+item.max_seconds+'</td><td>'+item.max_tries+'</td><td>' + item.num_guesses+'</td><td>' + item.time+'</td><td>'+ item.secret_number+'</td><td>'+ "0"+'</td><td>'+ item.play_date.replace("T00:00:00.000Z", "")+'</td></tr>')
+        place += 1;
+        $('tbody').append('<tr><td>'+ item.id  +'</td><td>'+ place + '</td><td>'+item.player+'</td><td>'+ item.range+'</td><td>'+item.max_seconds+'</td><td>'+item.max_tries+'</td><td>' + item.num_guesses+'</td><td>' + item.time+'</td><td>'+ item.secret_number+'</td><td>'+ "0"+'</td><td>'+ item.play_date.replace("T00:00:00.000Z", "")+'</td></tr>')
       });
 
   });
@@ -31,3 +36,16 @@ function GetLeaderboardMemory() {
 
   });
 }
+
+
+function organizeTokens(list) {
+  for (i = 0; i < list.length - 1; i++) {
+    if (list[i].indexFound < list[i + 1].indexFound) {
+      // do nothing
+    } else if (list[i].indexFound > list[i + 1].indexFound) {
+      var tempVal = list[i];
+      list[i] = list[i + 1];
+      list[i + 1] = tempVal;
+    }
+  }
+};

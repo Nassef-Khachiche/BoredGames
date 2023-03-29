@@ -21,6 +21,7 @@
     "mysql": "^2.18.1",
     "node-fetch": "^3.3.0",
     "prisma": "^4.10.1",
+    "socket.io": "^4.6.1",
     "websocket": "^1.0.34"
   }
 }
