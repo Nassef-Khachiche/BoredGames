@@ -1,5 +1,6 @@
 let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
 let timerRef = document.querySelector('.timer-display');
+const resetBtn = document.querySelector('.btn');
 let int = null;
 let win = false;
 
@@ -47,3 +48,8 @@ function displayTimer() {
         }
     }
 }
+
+/* reset/give up */
+resetBtn.addEventListener("click", () => {
+	window.location = window.location.href;
+});
