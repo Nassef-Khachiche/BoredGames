@@ -10,5 +10,19 @@
 }
 
 div.dataTables_wrapper div.dataTables_filter input {
-    width: 73%!important;
+    width: 75%!important;
+}
+
+body {
+    font-family: 'silkscreen';
+}
+
+@media only screen and (max-width: 1000px){
+    div.dataTables_wrapper {
+        width: 300px;
+    }
+    
+    #example_filter, #example_length {
+        display: none;
+    }
 }

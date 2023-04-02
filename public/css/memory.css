@@ -16,9 +16,9 @@ body {
     color: white;
 
     /* background */
-    background-image: url('https://wallpaperaccess.com/full/8637379.jpg');
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/044/942/915/large/alexander-nedviga-40-black-wood-background-textures-8.jpg?1641542213');
     background-repeat: no-repeat;
-    background-size: 120%;
+    background-size: 100%;
 
 }
 
@@ -54,9 +54,11 @@ img {
 
 @media only screen and (max-width: 1000px){
 
+    /* bootstrap way -> d-none d-sm-inline/flex */
     .blue-side, .red-side, .clicks, .time, .extra-data {
         display: none;
     }
+
     
     .timer-display {
         width: 250px;
@@ -81,9 +83,7 @@ img {
 
     body {
         background-repeat: repeat;
-        background-image: url('https://wallpaperaccess.com/full/8637379.jpg');
     }
-
 
     .card, .holder {
         width: 81px;
