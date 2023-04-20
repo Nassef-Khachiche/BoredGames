@@ -2,25 +2,20 @@
 @import url('https://fonts.cdnfonts.com/css/spacetype');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-
-
-::-webkit-scrollbar {
-    display: none;
-}
-
 body {
     overflow: hidden;
 
     /* font */
-    font-family: 'SpaceType', sans-serif;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
 
     /* background */
-    background-image: url('https://cdnb.artstation.com/p/assets/images/images/044/942/915/large/alexander-nedviga-40-black-wood-background-textures-8.jpg?1641542213');
     background-repeat: no-repeat;
+    background-image: url('https://img.freepik.com/free-vector/white-background-with-zigzag-pattern-design_1017-33197.jpg?w=2000');
     background-size: 100%;
-
 }
+
 
 img {
     width: 150px;

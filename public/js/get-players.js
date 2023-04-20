@@ -31,13 +31,14 @@ function GetLeaderboardMemory() {
       var users = resp.players_memory;
       users.forEach(item =>
       {
-        $('tbody').append('<tr><td>'+item.id+'</td><td>'+item.name+ '</td><td>'+item.time+'</td><td class="text-center">'+ item.clicks+'</td><td class="text-center">'+item.score+'</td></tr>')
+        $('tbody').append('<tr><td>'+item.id+'</td><td>'+item.name+ '</td><td>'+item.time+'</td><td class="text-center">'+ item.clicks+'</td></tr>')
       });
 
   });
 }
 
 
+/* sorts from best to worst records */
 function organizeTokens(list) {
   for (i = 0; i < list.length - 1; i++) {
     if (list[i].indexFound < list[i + 1].indexFound) {
