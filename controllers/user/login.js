@@ -1,11 +1,7 @@
 const { prisma } = require("../../prisma/connection");
 const bcrypt = require('bcrypt');
 
-// const session = require("express-session");
-
 exports.login = async (req, res) => {
-
-	// let id = req.session.user_id
 
 	let {
 		email,
@@ -15,7 +11,7 @@ exports.login = async (req, res) => {
 
 	try {
 
-		// check if password and email are in database > let them in | else give a message saying something went wrong
+		/* check if password and email are in database > let them in | else give a message saying something went wrong */
 		const user = await prisma.users.findUnique({
 
 			where:{
@@ -39,7 +35,7 @@ exports.login = async (req, res) => {
 			})
 		}
 
-		// compare hashed password
+		/* compare hashed password */
 		const match = await bcrypt.compare(password, user.password);
 
 		if (match && user.email == email) {
@@ -47,11 +43,7 @@ exports.login = async (req, res) => {
 			req.session.firstname = user.firstname;
 			req.session.lastname = user.lastname;
 
-			console.log(req.session);
 			req.session.save();
-
-			// Debug
-			// res.status(200).json({  message: 'Login complete!' })
 
             res.redirect('/dashboard');
 

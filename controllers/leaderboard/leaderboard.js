@@ -29,7 +29,7 @@ exports.leaderboard = async (req, res) =>
     });
 
 
-
+    /* send the data from the database to a endpoint we can later fetch */
     res.status(200).json({
         players_guess: guessthenumber,
         players_memory: memory,
