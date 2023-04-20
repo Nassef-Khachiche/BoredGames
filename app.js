@@ -69,6 +69,10 @@ app.get('/memory/leaderboard', function(req, res) {
 app.get('/leaderboards', function(req, res) { 
   res.render('leaderboards');
 });
+
+app.get('/puzzle', function(req, res) { 
+  res.render('puzzle/puzzle');
+});
   
 server.listen(port, () => {
   console.log(`Guess the number is live on localhost:${port}`);

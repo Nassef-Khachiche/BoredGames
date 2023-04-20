@@ -12,8 +12,9 @@ body {
 
     /* background */
     background-repeat: no-repeat;
-    background-image: url('https://img.freepik.com/free-vector/white-background-with-zigzag-pattern-design_1017-33197.jpg?w=2000');
+    background-image: url('https://static.vecteezy.com/system/resources/previews/004/567/632/original/abstract-geometric-background-with-minimal-shape-gradient-and-memphis-style-suitable-for-various-background-design-template-banner-poster-presentation-etc-vector.jpg ');
     background-size: 100%;
+
 }
 
 
@@ -21,13 +22,20 @@ img {
     width: 150px;
 }
 
-.blue-side, .red-side {
-    margin-left: 10%;
+.box {
+    width: 300px;
+    height: 100px;
 }
 
-#exampleModal {
-    transform: rotateY(0deg);
-    transform-style: preserve-3d;
+.box-image {
+    width: 150px;
+    height: 150px;
+}
+
+.box-holder
+{
+    margin-top: 5%;
+    width: 1000px;
 }
 
 .game-info {
@@ -42,6 +50,11 @@ img {
     width: 360px;
 }
 
+#exampleModal {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
 @keyframes drop {
     70%{transform: translateY(700px)}
     100%{transform: translateY(650px)}
@@ -49,11 +62,26 @@ img {
 
 @media only screen and (max-width: 1000px){
 
+    .body 
+    {
+        background-color: rgb(247, 250, 255);
+    }
+    
     /* bootstrap way -> d-none d-sm-inline/flex */
     .blue-side, .red-side, .clicks, .time, .extra-data {
         display: none;
     }
 
+    .box-holder
+    {
+        width: 340px;
+    }
+
+    .box
+    {
+        width: 150px;
+        height: 150px;
+    }
     
     .timer-display {
         width: 250px;
@@ -76,21 +104,10 @@ img {
         position: relative;
     }
 
-    body {
-        background-repeat: repeat;
-    }
-
     .card, .holder {
         width: 81px;
         height: 117px;
     }
-
-    /* For playability enable this piece of code but looks   :( */
-    /* And disable the extra cards no display */
-
-    /* .extra-cards {
-        display: none;
-    } */
 
     .extra-cards {
         display: flex;
