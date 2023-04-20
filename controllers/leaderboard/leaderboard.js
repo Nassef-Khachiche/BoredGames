@@ -1,3 +1,5 @@
+const { prisma } = require("../../prisma/connection");
+
 exports.leaderboard = async (req, res) => 
 {
     
