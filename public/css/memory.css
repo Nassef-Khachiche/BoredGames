@@ -11,9 +11,11 @@ body {
     color: rgb(0, 0, 0);
 
     /* background */
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-image: url('https://static.vecteezy.com/system/resources/previews/004/567/632/original/abstract-geometric-background-with-minimal-shape-gradient-and-memphis-style-suitable-for-various-background-design-template-banner-poster-presentation-etc-vector.jpg ');
     background-size: 100%;
+
+    background-color: rgb(247, 250, 255);
 
 }
 
@@ -23,19 +25,25 @@ img {
 }
 
 .box {
-    width: 300px;
+    width: 400px;
     height: 100px;
 }
 
 .box-image {
-    width: 150px;
-    height: 150px;
+    background-size: 100%;
+    width: 200px;
+    height: 120px;
 }
 
 .box-holder
 {
-    margin-top: 5%;
+    margin-top: 2%;
     width: 1000px;
+}
+
+.box:hover, .box-image:hover {  
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px 20px rgba(0,0,0,.06);
 }
 
 .game-info {
@@ -55,17 +63,29 @@ img {
     transform-style: preserve-3d;
 }
 
+.wait-turn {
+    pointer-events: none;
+}
+
+.shake 
+{
+    animation: shake 0.5s ease infinite;
+}
+
 @keyframes drop {
     70%{transform: translateY(700px)}
     100%{transform: translateY(650px)}
 }
 
-@media only screen and (max-width: 1000px){
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+  }
 
-    .body 
-    {
-        background-color: rgb(247, 250, 255);
-    }
+@media only screen and (max-width: 1000px){
     
     /* bootstrap way -> d-none d-sm-inline/flex */
     .blue-side, .red-side, .clicks, .time, .extra-data {
@@ -77,10 +97,18 @@ img {
         width: 340px;
     }
 
-    .box
+    .box, .box-image
     {
         width: 150px;
         height: 150px;
+    }
+
+    .box-image
+    {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 50%;
     }
     
     .timer-display {
@@ -116,5 +144,10 @@ img {
     .card, .holder {
         width: 57px;
         height: 87px;
+    }
+
+    body 
+    {
+        background-image: none;
     }
 }

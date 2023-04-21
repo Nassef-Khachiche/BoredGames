@@ -5,48 +5,76 @@
 
 <section id="puzzle">   
 
-    <div class="container d-flex justify-content-center align-items-center mt-5 text-center">
+    <div class="container d-flex justify-content-center align-items-center text-center">
         
     <div class="puzzle">
-        <div class="row">
+
+        <div class="row d-block">
             <div class="box-holder d-flex justify-content-around align-items-center">
                 <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
-                    This picture was drawn in the year 1503
+                    
                 </div>
-                <div class="box-image shadow-sm bg-white rounded" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1200px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg'); background-size: 100%;">
+                <div class="box-image shadow-sm bg-white rounded img-fluid">
                 </div>
             </div>
-        </div>
 
-        <div class="row">
             <div class="box-holder d-flex justify-content-around align-items-center">
                 <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
-                    This picture was drawn in the year 1503
+                    
                 </div>
-                <div class="box-image shadow-sm bg-white rounded" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1200px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg'); background-size: 100%;">
+                <div class="box-image shadow-sm bg-white rounded img-fluid">
                 </div>
             </div>
-        </div>
 
-
-        <div class="row">
             <div class="box-holder d-flex justify-content-around align-items-center">
                 <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
-                    This picture was drawn in the year 1503
+                    
                 </div>
-                <div class="box-image shadow-sm bg-white rounded" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1200px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg'); background-size: 100%;">
+                <div class="box-image shadow-sm bg-white rounded img-fluid">
+                </div>
+            </div>
+
+            <div class="box-holder d-flex justify-content-around align-items-center">
+                <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
+                    
+                </div>
+                <div class="box-image shadow-sm bg-white rounded">
+                </div>
+            </div>
+
+            <div class="box-holder d-flex justify-content-around align-items-center">
+                <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
+                    
+                </div>
+                <div class="box-image shadow-sm bg-white rounded img-fluid">
+                </div>
+            </div>
+            
+            <div class=" position-absolute toast toast-success align-items-center text-white bg-success top-0 end-0 m-2" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                    Well done !
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+
+            <div class="position-absolute toast toast-fail align-items-center text-white bg-danger top-0 end-0 m-2" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                    Try again.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
         </div>
 
     </div>
 
-        
-
-    </div>
-
-    <script src="../../public/js/show-cards.js"></script>
-    <script src="../../public/js/shuffle-cards.js"></script>
-    <script src="../../public/js/show-time.js"></script>
+    <script src="../../public/js/match-picture.js"></script>
+    <script src="../../public/js/build-content.js"></script>
+    <script>GetContent()</script>
 
 </section>
+
+

@@ -29,6 +29,9 @@ function GetLeaderboardMemory() {
 
   GetLeaderboard().then( resp=> {
       var users = resp.players_memory;
+
+      organizeTokens(users);
+
       users.forEach(item =>
       {
         $('tbody').append('<tr><td>'+item.id+'</td><td>'+item.name+ '</td><td>'+item.time+'</td><td class="text-center">'+ item.clicks+'</td></tr>')

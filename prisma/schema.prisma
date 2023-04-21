@@ -36,3 +36,16 @@ model leaderboard_memory {
   clicks Int
   score  Int
 }
+
+model leaderboard_puzzle {
+  id   Int    @id @default(autoincrement())
+  name String @db.VarChar(100)
+  time String @db.VarChar(100)
+}
+
+model content_puzzle {
+  id         Int    @id @default(autoincrement())
+  sentence   String @db.VarChar(100)
+  image_path String @db.VarChar(100)
+  uid        String @db.VarChar(100)
+}

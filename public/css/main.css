@@ -13,6 +13,11 @@ div.dataTables_wrapper div.dataTables_filter input {
     width: 70%!important;
 }
 
+.dataTables_length 
+{
+    margin-right: 100%;
+}
+
 @media only screen and (max-width: 1000px){
 
     div.dataTables_wrapper {

@@ -1,7 +1,7 @@
 <div class="d-none">
     <%- include('../partials/sitemaster'); %>
     <link rel="stylesheet" href="../public/css/memory.css">
-    <link rel="stylesheet" href="../../public/css/leaderboards.css">
+    <link rel="stylesheet" href="../../public/css/main.css">
 </div>
 
 <section id="memory-board" >
@@ -9,19 +9,22 @@
         <div class="d-block">
             <div class="row d-none d-sm-block">
                 <div class="col-12">
-                    <div class="board bg-white text-black p-3 d-flex justify-content-between rounded shadow border-4 mt-5">
+                    <div class="board bg-white text-black p-3 d-flex justify-content-between rounded shadow mt-4">
                         <h3 class="mt-sm-2 fw-bold me-sm-5">LEADERBOARD</h3>
                         <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b2989eac-7897-4fd2-947a-87413091121b/d9cl79t-7f7d23ad-cb08-44c8-99a4-fd6ba60265b2.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IyOTg5ZWFjLTc4OTctNGZkMi05NDdhLTg3NDEzMDkxMTIxYlwvZDljbDc5dC03ZjdkMjNhZC1jYjA4LTQ0YzgtOTlhNC1mZDZiYTYwMjY1YjIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gvaNXESe8FbhOmHWp35qOrFynHhVNJnlSeywGnk_s04" alt="">
                     </div>  
                 </div>
             </div>
 
-            <h3 class="mt-2 fw-bold text-center d-block d-sm-none">LEADERBOARD</h3>
+            <div class="bg-white text-black text center p-3 d-flex justify-content-center mt-3 rounded shadow border-0 d-block d-sm-none">
+                <h3 class="mt-2 fw-bold text-center">LEADERBOARD</h3>
+            </div> 
+            
     
             <div class="row">
                 
                 <div class="col-12">
-                    <div class="board bg-white text-black p-3 rounded border-4 mt-5 shadow text-center table-responsive">
+                    <div class="board bg-white text-black p-3 rounded border-4 mt-3 mt-sm-5 shadow text-center table-responsive">
 
 
                         <table class="table table-sm d-none" id="example">
@@ -39,7 +42,7 @@
                         </table>
 
                         <div class="table-toggle fs-1 p-5" onclick="this.classList.add('d-none'); document.getElementById('example').classList.remove('d-none');;">
-                            <u>Show</u>
+                            <i class="fa fa-repeat fw-bold" aria-hidden="true"></i>
                         </div>
 
                     </div>

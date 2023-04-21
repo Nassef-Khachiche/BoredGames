@@ -12,8 +12,12 @@ app.use(
     secret: "secret-key",
     resave: false,
     saveUninitialized: false,
+    SameSite: true,
     cookie : {
       maxAge: 1000 * 60 * 60 * 24,
+      secure: true,
+      httpOnly: true,
+      sameSite: 'secure'
     }
 }));
 
@@ -75,5 +79,5 @@ app.get('/puzzle', function(req, res) {
 });
   
 server.listen(port, () => {
-  console.log(`Guess the number is live on localhost:${port}`);
+  console.log(`Bored Games is live on localhost:${port}`);
 });
