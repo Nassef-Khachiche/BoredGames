@@ -72,6 +72,11 @@ img {
     animation: shake 0.5s ease infinite;
 }
 
+.fall 
+{
+    animation: drop 3s ease forwards;
+}
+
 @keyframes drop {
     70%{transform: translateY(700px)}
     100%{transform: translateY(650px)}
@@ -90,11 +95,6 @@ img {
     /* bootstrap way -> d-none d-sm-inline/flex */
     .blue-side, .red-side, .clicks, .time, .extra-data {
         display: none;
-    }
-
-    .box-holder
-    {
-        width: 340px;
     }
 
     .box, .box-image
@@ -119,6 +119,13 @@ img {
     .fall 
     {
         opacity: 0;
+    }
+
+    .box-holder
+    {
+        margin-top: 2%;
+        padding: 0;
+        width: 100%;
     }
 
     .container {

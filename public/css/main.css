@@ -18,7 +18,16 @@ div.dataTables_wrapper div.dataTables_filter input {
     margin-right: 100%;
 }
 
+#timer {
+    width: 200px;
+}
+
 @media only screen and (max-width: 1000px){
+
+    
+    #timer {
+        width: 100%;
+    }
 
     div.dataTables_wrapper {
         width: 280px;

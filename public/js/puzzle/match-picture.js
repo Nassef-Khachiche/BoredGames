@@ -8,9 +8,6 @@ let items = [];
 
 
 
-
-
-
 /* sentence click */
 text.forEach(function(item) {
   item.addEventListener('click', function() {
@@ -22,9 +19,24 @@ text.forEach(function(item) {
     matches.push(lastClass);
     items.push(item);
     count++;
+    console.log(count, matches)
+
+
+    text.forEach(function(item) {
+        item.classList.add('wait-turn');
+    });
 
     if (count == 2) 
     {
+
+        img.forEach(function(item) {
+            item.classList.remove('wait-turn');
+        });
+
+        text.forEach(function(item) {
+            item.classList.remove('wait-turn');
+        });
+
         if (matches[0] == matches[1]) 
         {
             $('.toast-success').show();
@@ -40,26 +52,18 @@ text.forEach(function(item) {
 
     if (count == 3) 
     {
+        count = 1;
 
         img.forEach(function(item) {
-            item.classList.remove('wait-turn', 'shake');
+            item.classList.remove('shake');
         });
 
         text.forEach(function(item) {
-            item.classList.remove('wait-turn', 'shake');
+            item.classList.remove('shake');
         });
 
-        count = 0;
-
     }
-    else 
-    {
-        this.classList.add('shake');
-
-        text.forEach(function(item) {
-            item.classList.add('wait-turn');
-        });  
-    }
+    this.classList.add('shake');
   });
 });
 
@@ -68,52 +72,60 @@ text.forEach(function(item) {
 img.forEach(function(item) {
     item.addEventListener('click', function() {
         $('.toast').hide();
-
+        
         const classList = item.classList;
         let lastClass = item.classList.item(classList.length - 1);
         
         matches.push(lastClass);
         
         count++;
+        console.log(count, matches)
+
+        img.forEach(function(item) {
+            item.classList.add('wait-turn');
+        });
 
         if (count == 2) 
         {
+
+            img.forEach(function(item) {
+                item.classList.remove('wait-turn');
+            });
+    
+            text.forEach(function(item) {
+                item.classList.remove('wait-turn');
+            });
+
             if (matches[0] == matches[1]) 
             {
                 $('.toast-success').show();
+
             }
             else 
             {
                 $('.toast-fail').show();
             }
-
+    
             matches = [];
             items = [];
         }
 
         if (count == 3) 
         {
-
+            count = 1;
             img.forEach(function(item) {
-                item.classList.remove('wait-turn', 'shake');
+                item.classList.remove('shake');
             });
-
+    
             text.forEach(function(item) {
-                item.classList.remove('wait-turn', 'shake');
+                item.classList.remove('shake');
             });
 
-            count = 0;
-
-        }    
-        else 
-        {
-            this.classList.add('shake');
-
-            img.forEach(function(item) {
-                item.classList.add('wait-turn');
-            });
         }
 
+        this.classList.add('shake');
+        
+        
     });
 });
 

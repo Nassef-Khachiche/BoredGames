@@ -5,8 +5,8 @@
 
 <section id="puzzle">   
 
-    <div class="container d-flex justify-content-center align-items-center text-center">
-        
+    <div class="container d-block d-sm-flex justify-content-center align-items-center text-center">
+        <div id="timer" class="fs-2 shadow-sm bg-white rounded p-sm-5 ps-0">30s</div>
     <div class="puzzle">
 
         <div class="row d-block">
@@ -50,7 +50,7 @@
                 </div>
             </div>
             
-            <div class=" position-absolute toast toast-success align-items-center text-white bg-success top-0 end-0 m-2" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class=" position-absolute toast toast-success align-items-center text-white bg-success top-0 start-0 m-2" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="d-flex">
                     <div class="toast-body">
                     Well done !
@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="position-absolute toast toast-fail align-items-center text-white bg-danger top-0 end-0 m-2" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="position-absolute toast toast-fail align-items-center text-white bg-danger top-0 start-0 m-2" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="d-flex">
                     <div class="toast-body">
                     Try again.
@@ -71,9 +71,10 @@
 
     </div>
 
-    <script src="../../public/js/match-picture.js"></script>
-    <script src="../../public/js/build-content.js"></script>
-    <script>GetContent()</script>
+    <script src="../../public/js/puzzle/match-picture.js"></script>
+    <script src="../../public/js/puzzle/build-content.js"></script>
+    <script src="../../public/js/puzzle/show-time.js"></script>
+    <script>GetContent();</script>
 
 </section>
 

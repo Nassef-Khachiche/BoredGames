@@ -1,7 +1,7 @@
 var timeleft = sessionStorage.getItem('seconds');
 
 var timer = setInterval(function(){
-  if(timeleft <= 0 || document.getElementById('state').innerHTML == "You won!"){
+  if(timeleft <= 1 || document.getElementById('state').innerHTML == "You won!"){
     clearInterval(timer);
     document.getElementById("countdown").innerHTML = "Finished";
   } else {

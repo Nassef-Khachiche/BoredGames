@@ -4,7 +4,6 @@ const sentence = document.querySelectorAll('.box');
 let images = [];
 let sentences = [];
 let id = [];
-let pair = [];
 
 let g = 0;
 let h = 0;
@@ -24,7 +23,8 @@ function GetContent() {
     GetContentInJson().then( resp=> {
         var content = resp.data;
 
-        
+        content.sort(() => Math.random() - 0.5);
+
         content.forEach(function(item) 
         {
             images.push(item.image_path);
@@ -32,17 +32,28 @@ function GetContent() {
             id.push(item.id);
         });
 
+        images.sort(() => Math.random() - 0.5);
+        sentences.sort(() => Math.random() - 0.5);
+
         image.forEach(function(item) 
         {
-            item.classList.add("pair-" + id[i]);
             item.style.backgroundImage = `url('${images[i]}')`;
+            content.forEach(function(c_item){
+                if (images[i] == c_item.image_path) {
+                    item.classList.add('pair-' + c_item.id);
+                }
+            })
             i++;
         });
 
         sentence.forEach(function(item)
         {
-            item.classList.add("pair-" + id[j]);
             item.innerHTML = sentences[j];
+            content.forEach(function(c_item){
+                if (sentences[j] == c_item.sentence) {
+                    item.classList.add('pair-' + c_item.id);
+                }
+            })
             j++;
         });
 
