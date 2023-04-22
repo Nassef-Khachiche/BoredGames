@@ -30,10 +30,20 @@ exports.leaderboard = async (req, res) =>
         },
     });
 
+    const puzzle = await prisma.leaderboard_puzzle.findMany({
+        /* Returns all user fields */
+        select: {
+            id: true,
+            name: true,
+            time: true,
+        },
+    });
+
 
     /* send the data from the database to a endpoint we can later fetch */
     res.status(200).json({
         players_guess: guessthenumber,
         players_memory: memory,
+        players_puzzle: puzzle,
     });
 }

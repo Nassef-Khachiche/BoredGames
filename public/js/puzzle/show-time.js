@@ -1,27 +1,46 @@
 /* puzzle picture */
-let timeLeft = 30;
-const elem = document.getElementById('timer');
-let timerId = setInterval(countdown, 1000);
+const countdownTime = document.getElementById('timer');
+const timeInSeconds = document.getElementById('time');
+
+let gameStart = true;
+let clicked = false;
+
+let timeLeft = 29;
 
 function countdown() {
-    if (timeLeft == 1) {
-        elem.innerHTML = "DNF"
-        clearTimeout(timerId);
 
-    } else {
-        elem.innerHTML = timeLeft + 's';
-        timeLeft--;
+    if (total_pairs == 5) 
+    {
+        $('#time').val(timeLeft + 1);
+        gameStart = false;
     }
+
+    if (gameStart == true) 
+    {
+        if (timeLeft == 0) {
+            countdownTime.innerHTML = "DNF"
+            $('#exampleModal').show();
+        } else {
+            countdownTime.innerHTML = timeLeft + 's';
+            timeLeft--;
+        }
+    } 
 }
 
 img.forEach(function(item) {
     item.addEventListener("click", function(){
-        countdown();
+        if (clicked == false) {
+            clicked = true;
+            setInterval(countdown, 1000);
+        }
     });
 });
 
 text.forEach(function(item) {
     item.addEventListener("click", function(){
-        countdown();
+        if (clicked == false) {
+            clicked = true;
+            setInterval(countdown, 1000);
+        }
     });
 });

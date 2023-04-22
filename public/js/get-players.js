@@ -41,11 +41,33 @@ function GetLeaderboardMemory() {
 }
 
 
+function GetLeaderboardPuzzle() {
+  async function GetLeaderboard() { //Most compact way to return a fetch
+    const response = await fetch('http://localhost:8080/leaderboard', {}); 
+    const json = await response.json();
+    return json; //do here wathever with your json if you want to return
+  }
+
+  GetLeaderboard().then( resp=> {
+      var users = resp.players_puzzle;
+
+      organizeTokens(users);
+
+      users.forEach(item =>
+      {
+        $('tbody').append('<tr><td >'+item.id+'</td><td>'+item.name+ '</td><td class="text-start">'+item.time+'</td></tr>')
+      });
+
+  });
+}
+
+
+
 /* sorts from best to worst records */
 function organizeTokens(list) {
   for (i = 0; i < list.length - 1; i++) {
     if (list[i].indexFound < list[i + 1].indexFound) {
-      // do nothing
+      /* do nothing */
     } else if (list[i].indexFound > list[i + 1].indexFound) {
       var tempVal = list[i];
       list[i] = list[i + 1];

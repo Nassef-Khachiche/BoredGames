@@ -2,13 +2,13 @@ const { prisma } = require("../../prisma/connection");
 
 exports.savedata = async (req, res) => 
 {
-    let { name, seconds } = req.body;
+    let { username, seconds } = req.body;
 
     const player = await prisma.leaderboard_puzzle.create({
         data: {
-            name: name,
-            seconds: seconds,
-        }
+            name: username,
+            time: seconds.toString(),
+        },
     });
 
     res.redirect('/puzzle/leaderboard');

@@ -3,8 +3,13 @@ const img = document.querySelectorAll('.box-image');
 const text = document.querySelectorAll('.box');
 
 let count = 0;
+let total_pairs = 0;
+
+
 let matches = [];
+let pairs = [];
 let items = [];
+
 
 
 
@@ -16,10 +21,11 @@ text.forEach(function(item) {
     const classList = item.classList;
     let lastClass = classList.item(classList.length - 1);
 
+    
     matches.push(lastClass);
     items.push(item);
+
     count++;
-    console.log(count, matches)
 
 
     text.forEach(function(item) {
@@ -39,7 +45,17 @@ text.forEach(function(item) {
 
         if (matches[0] == matches[1]) 
         {
+            total_pairs++;
+
+            if (total_pairs == 5) 
+            {
+                $('#exampleModal').modal('show');
+            }
+
             $('.toast-success').show();
+            items[0].classList.add('fade-away');
+            items[1].classList.add('fade-away');
+            
         }
         else 
         {
@@ -77,9 +93,9 @@ img.forEach(function(item) {
         let lastClass = item.classList.item(classList.length - 1);
         
         matches.push(lastClass);
+        items.push(item);
         
         count++;
-        console.log(count, matches)
 
         img.forEach(function(item) {
             item.classList.add('wait-turn');
@@ -98,8 +114,16 @@ img.forEach(function(item) {
 
             if (matches[0] == matches[1]) 
             {
-                $('.toast-success').show();
+                total_pairs++;
 
+                if (total_pairs == 5) 
+                {
+                    $('#exampleModal').modal('show');
+                }
+
+                $('.toast-success').show();
+                items[0].classList.add('fade-away');
+                items[1].classList.add('fade-away');
             }
             else 
             {

@@ -77,6 +77,10 @@ app.get('/leaderboards', function(req, res) {
 app.get('/puzzle', function(req, res) { 
   res.render('puzzle/puzzle');
 });
+
+app.get('/puzzle/leaderboard', function(req, res) { 
+  res.render('puzzle/leaderboard');
+});
   
 server.listen(port, () => {
   console.log(`Bored Games is live on localhost:${port}`);

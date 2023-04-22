@@ -3,69 +3,70 @@
     <%- include('../partials/memory'); %>
 </div>
 
-<section id="puzzle">   
+<section id="puzzle">
 
-    <div class="container d-block d-sm-flex justify-content-center align-items-center text-center">
-        <div id="timer" class="fs-2 shadow-sm bg-white rounded p-sm-5 ps-0">30s</div>
+    <div class="container d-block d-sm-flex justify-content-start align-items-center text-center">
+    <div class="info-display d-flex justify-content-center align-items-center text-center flex-column">
+        <div class="d-sm-flex d-none fs-3">Picture Puzzle</div>
+        <div id="timer" class="fs-2 shadow-sm bg-white rounded-50 p-sm-3 top-10 start-0">30s</div>
+    </div>
+
     <div class="puzzle">
-
-        <div class="row d-block">
-            <div class="box-holder d-flex justify-content-around align-items-center">
-                <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
-                    
-                </div>
-                <div class="box-image shadow-sm bg-white rounded img-fluid">
-                </div>
+        <div class="box-holder d-flex justify-content-around align-items-center">
+            <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
+                
             </div>
-
-            <div class="box-holder d-flex justify-content-around align-items-center">
-                <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
-                    
-                </div>
-                <div class="box-image shadow-sm bg-white rounded img-fluid">
-                </div>
+            <div class="box-image shadow-sm bg-white rounded img-fluid">
             </div>
+        </div>
 
-            <div class="box-holder d-flex justify-content-around align-items-center">
-                <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
-                    
-                </div>
-                <div class="box-image shadow-sm bg-white rounded img-fluid">
-                </div>
+        <div class="box-holder d-flex justify-content-around align-items-center">
+            <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
+                
             </div>
+            <div class="box-image shadow-sm bg-white rounded img-fluid">
+            </div>
+        </div>
 
-            <div class="box-holder d-flex justify-content-around align-items-center">
-                <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
-                    
-                </div>
-                <div class="box-image shadow-sm bg-white rounded">
-                </div>
+        <div class="box-holder d-flex justify-content-around align-items-center">
+            <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
+                
             </div>
+            <div class="box-image shadow-sm bg-white rounded img-fluid">
+            </div>
+        </div>
 
-            <div class="box-holder d-flex justify-content-around align-items-center">
-                <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
-                    
-                </div>
-                <div class="box-image shadow-sm bg-white rounded img-fluid">
-                </div>
+        <div class="box-holder d-flex justify-content-around align-items-center">
+            <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
+                
             </div>
-            
-            <div class=" position-absolute toast toast-success align-items-center text-white bg-success top-0 start-0 m-2" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
+            <div class="box-image shadow-sm bg-white rounded">
+            </div>
+        </div>
+
+        <div class="box-holder d-flex justify-content-around align-items-center">
+            <div class="box shadow-sm bg-white rounded d-flex justify-content-around align-items-center">
+                
+            </div>
+            <div class="box-image shadow-sm bg-white rounded img-fluid">
+            </div>
+        </div>
+        
+        <div class="position-absolute slide-in-right toast toast-success align-items-center text-white bg-success top-0 start-0 m-2" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class=" d-flex justify-content-around text-center">
+                <div class="toast-body text-center">
                     Well done !
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
+                <button type="button" class="btn-close btn-close-white d-none d-sm-flex  me-sm-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
+        </div>
 
-            <div class="position-absolute toast toast-fail align-items-center text-white bg-danger top-0 start-0 m-2" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
+        <div class="position-absolute slide-in-right toast toast-fail align-items-center text-white bg-danger top-0 start-0 m-2" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex justify-content-around">
+                <div class="toast-body text-center">
                     Try again.
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
+                <button type="button" class="btn-close btn-close-white d-none d-sm-flex me-sm-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
 
@@ -79,3 +80,26 @@
 </section>
 
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <form action="/puzzle" method="post">
+            <div class="modal-header">
+                <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">You paired all the cards !</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-black">
+                <labek class="form-label">Username</label>
+                <input type="text" class="form-control mb-3 mt-3" name="username" max="12" placeholder="Username...">
+                <labek class="form-label">Time</label>
+                <input type="number" class="form-control mb-3 mt-3" id="time" name="seconds" readonly>
+            </div>
+            <div class="modal-footer pb-0">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>

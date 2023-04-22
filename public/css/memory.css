@@ -1,7 +1,9 @@
+/* font family */
 @import url('https://fonts.cdnfonts.com/css/silkscreen');
 @import url('https://fonts.cdnfonts.com/css/spacetype');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+/* body */
 body {
     overflow: hidden;
 
@@ -14,12 +16,11 @@ body {
     background-repeat: repeat;
     background-image: url('https://static.vecteezy.com/system/resources/previews/004/567/632/original/abstract-geometric-background-with-minimal-shape-gradient-and-memphis-style-suitable-for-various-background-design-template-banner-poster-presentation-etc-vector.jpg ');
     background-size: 100%;
-
     background-color: rgb(247, 250, 255);
-
 }
 
 
+/* html elements, classes and id's */
 img {
     width: 150px;
 }
@@ -72,11 +73,14 @@ img {
     animation: shake 0.5s ease infinite;
 }
 
-.fall 
+.fade-away
 {
-    animation: drop 3s ease forwards;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1s, opacity 1s linear;
 }
 
+/* animations */
 @keyframes drop {
     70%{transform: translateY(700px)}
     100%{transform: translateY(650px)}
@@ -89,7 +93,9 @@ img {
     75% { transform: rotate(-2deg); }
     100% { transform: rotate(0deg); }
   }
+  
 
+/* small devices */
 @media only screen and (max-width: 1000px){
     
     /* bootstrap way -> d-none d-sm-inline/flex */
@@ -111,10 +117,18 @@ img {
         background-position-y: 50%;
     }
     
+    /* overwrite bootstrap */
     .timer-display {
-        width: 250px;
-        position: absolute;
-    }   
+        border: 5px rgb(71, 71, 255)!important;
+        background-color: rgb(163, 195, 255)!important;
+        color: aliceblue!important;
+        width: 195px!important;
+        position: absolute!important;
+    }
+    
+    .reset {
+        background-color: rgb(255, 163, 163);
+    }
 
     .fall 
     {
@@ -124,7 +138,6 @@ img {
     .box-holder
     {
         margin-top: 2%;
-        padding: 0;
         width: 100%;
     }
 
@@ -149,12 +162,14 @@ img {
     }
 
     .card, .holder {
-        width: 57px;
+        width: 58px;
         height: 87px;
     }
 
     body 
     {
-        background-image: none;
+        background-size: 438%;
+        background-position-y: 10%;
+        font-weight: 800;
     }
 }

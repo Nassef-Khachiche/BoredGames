@@ -5,17 +5,18 @@
 
 <section id="memory">   
 
-     <div class="game-info d-flex justify-content-around mt-5 mt-sm-0 mb-5">
-        <div class="fs-1 text-center extra-data">
+     <div class="game-info d-flex justify-content-around mt-5 mt-sm-3 mb-5">
+        <div class="bg-white px-4 shadow-sm rounded fs-1 text-center extra-data">
             Clicks: <p class="text-success ms-2 clicks">0</p>
         </div>
-        <div class="timer-display fs-1 text-center me-sm-5">
-                00 : 00 : 00
+
+        <div class="bg-white shadow-sm rounded timer-display rounded fs-1 text-center me-sm-5">
+            00 : 00 : 00
         </div>
 
-        <button class="reset btn d-sm-none position-absolute mt-5 mt-sm-0 w-50 btn-sm btn-danger text-white">Give up</button>
+        <button class="reset btn d-sm-none position-absolute fs-3 mt-5 mt-sm-0 w-50 btn-sm btn-danger text-white">Give up</button>
         
-        <div class="fs-1 text-center extra-data">
+        <div class="bg-white px-4 shadow-sm rounded fs-1 text-center extra-data">
             Score: <p class="text-success ms-2 score">0</p>
         </div>
      </div>
@@ -178,8 +179,9 @@
     <div class="modal-dialog">
     <div class="modal-content">
         <form action="/memory" method="post">
+
             <div class="modal-header">
-                <h5 class="modal-title text-black" id="exampleModalLabel">You paired all the cards !</h5>
+                <h5 class="modal-title text-black fw-bold   " id="exampleModalLabel">You paired all the cards !</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-black">
